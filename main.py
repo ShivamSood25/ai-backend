@@ -88,4 +88,5 @@ async def generate_text(request: PromptRequest):
     )
     con.commit()
 
-    return {"reply": reply}
+    return f'{reply}'
+
