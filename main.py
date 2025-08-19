@@ -13,7 +13,7 @@ if not key:
     raise ValueError("API key not found. Set GKEY in environment variables.")
 
 # Load Database URL from Render
-DATABASE_URL = os.getenv("dpg-d2i5u3juibrs73dv1lgg-a")
+DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise ValueError("Database URL not found. Set DATABASE_URL in environment variables.")
 
