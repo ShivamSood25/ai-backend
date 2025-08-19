@@ -6,8 +6,10 @@ from dotenv import load_dotenv
 import mysql.connector
 import os
 
-load_dotenv()
 key = os.getenv("GKEY")
+if not key:
+    raise ValueError("API key not found. Set GKEY in environment variables.")
+
 
 app = FastAPI()
 
@@ -62,3 +64,4 @@ async def generate_text(request: PromptRequest):
     cursor.close()
     con.close()
     return f'{reply}'
+
