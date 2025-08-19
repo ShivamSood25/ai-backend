@@ -59,4 +59,6 @@ async def generate_text(request: PromptRequest):
     messages.append({'role':'assistant','content':reply})
     cursor.execute("insert into chat (user_chat,ai_chat) values (%s,%s)",(request.prompt,reply))
     con.commit()
+    cursor.close()
+    con.close()
     return f'{reply}'
