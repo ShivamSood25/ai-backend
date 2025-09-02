@@ -74,7 +74,7 @@ async def generate_text(request: PromptRequest):
 
     # Call OpenAI
     chat = client.chat.completions.create(
-        model="llama3-70b-8192",
+        model="openai/gpt-oss-20b",
         messages=messages
     )
     
@@ -89,4 +89,5 @@ async def generate_text(request: PromptRequest):
     con.commit()
 
     return f'{reply}'
+
 
